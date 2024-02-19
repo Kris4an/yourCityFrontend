@@ -1,7 +1,7 @@
 <footer>
     <div class="holder">
         <span class='title'>Социални мрежи</span>
-        <a class="item" href="https://www.instagram.com/us.ppmg">Instagram</a>
+        <a class="item" href="https://www.instagram.com/mladkmet/">Instagram</a>
         <a class="item" href="https://facebook.com">Facebook</a>
     </div>
     <div class="holder">
@@ -11,24 +11,27 @@
     </div>
     <div class="holder">
         <span class='title'>Контакти</span>
-        <span class="item">имейл: email@example.com</span>
-        <span class="item">тел.: 0888 123 456</span>
+        <span class="item">kmetnamladazagora@gmail.com</span>
+        <span class="item"></span>
     </div>
 </footer>
 
 <style>
     .item{
         font-family: 'Roboto';
-        color: white;
+        color: var(--text);
         font-size: 16px;
         text-decoration: none;
+        transition: all ease-in-out 300ms;
     }
     .title{
         font-family: 'Roboto';
-        color: white;
+        color: var(--text);
         font-size: 18px;
-        border-bottom: 1px solid white;
-        padding-bottom: 5px;
+        border-bottom: 1px solid var(--text);
+        border-top: 1px solid var(--text);
+        padding: 5px 0px 5px 0px;
+        letter-spacing: 2px;
     }
     .holder{
         height: 100%;
@@ -42,8 +45,11 @@
         height: 8rem;
         display: flex;
         align-items: flex-start;
-        background-color: #3A3A3A;
+        background-color: var(--secondary);
         justify-content: space-around;
         padding: 1rem 0rem 1rem 0rem;
+    }
+    a:hover{
+        text-decoration: underline;
     }
 </style>

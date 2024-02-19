@@ -1,15 +1,6 @@
 <script lang='ts'>
     import { fade, fly, slide } from 'svelte/transition';
 
-    import { spring } from 'svelte/motion';
-
-	let coords = spring({ x: 50, y: 50 }, {
-		stiffness: 0.1,
-		damping: 0.25
-	});
-
-	let size = spring(10);
-
     let title:string = 'ТВОИТЕ ИДЕИ ЗА ТВОЯТ';
     let titleBold:string = 'ГРАД';
     let hover:boolean = false;
@@ -43,7 +34,7 @@
 <style>
     .titleMainHolder{
         height: 99vh;
-        background-color: #000000B4;
+        background-color: var(--transparentBackground);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -57,7 +48,7 @@
     }
     .title{
         user-select: none;
-        color: white;
+        color: var(--text);
         font-family: 'Roboto';
         font-weight: 100;
         font-size: 120px;
@@ -69,6 +60,6 @@
         font-weight: 500;
         font-size: 120px;
         text-align: center;
-        color: #1FB12F;
+        color: var(--vibrantPrimary);
     }
 </style>
