@@ -41,6 +41,14 @@
 				color = '#26C4E7';
 				break;
 			}
+            case 'култура': {
+				color = '#ffc400';
+				break;
+			}
+            case 'образивание': {
+				color = '#cf0029';
+				break;
+			}
 			default:
 				color = '';
 		}
