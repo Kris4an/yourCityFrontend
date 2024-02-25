@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
-//@ts-ignore
-import { API_URL } from '$env/static/private';
+
+import { PUBLIC_API_URL } from '$env/static/public';
 
 export const load = (async ({ cookies }) => {
     const headers = new Headers();
@@ -9,7 +9,7 @@ export const load = (async ({ cookies }) => {
 	if (cookie) {
         headers.append('Cookie', cookie);
     }
-    const res = await fetch(API_URL+'/suggestion/all?page=1', {
+    const res = await fetch(PUBLIC_API_URL+'/suggestion/all?page=1', {
 		method: 'GET',
 		credentials: 'include',
 		headers

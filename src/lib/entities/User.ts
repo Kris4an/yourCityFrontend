@@ -1,9 +1,9 @@
 interface User{
-    name: String,
-    email: String,
-    phone: String | undefined,
-    role: String,
-    school: String | undefined
+    name: string,
+    email: string,
+    phone: string | undefined,
+    role: string,
+    school: string | undefined
 }
 
 export default User;

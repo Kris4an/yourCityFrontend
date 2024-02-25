@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Dropdown from './Dropdown.svelte';
 	import type AdminSuggestion from './entities/AdminSuggestion';
-	//@ts-ignore
+	
 	import { PUBLIC_API_URL } from '$env/static/public';
 
 	export let suggestion: AdminSuggestion;

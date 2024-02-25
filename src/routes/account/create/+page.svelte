@@ -2,7 +2,7 @@
 	import Dropdown from '$lib/Dropdown.svelte';
 	import type { PageData } from './$types';
 	import type School from '$lib/entities/School';
-	//@ts-ignore
+	
 	import { PUBLIC_API_URL } from '$env/static/public';
 	import { goto } from '$app/navigation';
 

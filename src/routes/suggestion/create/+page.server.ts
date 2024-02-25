@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
-//@ts-ignore
-import { API_URL } from '$env/static/private';
+
+import { PUBLIC_API_URL } from '$env/static/public';
 import { error } from '@sveltejs/kit';
 
 export const load = (async ({ parent }) => {
@@ -10,7 +10,7 @@ export const load = (async ({ parent }) => {
             message: "За изпращане на предложение трябва да си влязъл в профила си!"
         })
     }
-    const res = await fetch(API_URL+"/suggestion/category",{
+    const res = await fetch(PUBLIC_API_URL+"/suggestion/category",{
         method: 'GET'
     })
     if(res.status == 200){

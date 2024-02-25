@@ -1,7 +1,7 @@
 <script lang='ts'>
 import type PublicSuggestion from "./entities/PublicSuggestion";
 	import type PublicUser from "./entities/PublicUser";
-    //@ts-ignore
+    
 	import { PUBLIC_API_URL } from '$env/static/public';
     export let suggestion: PublicSuggestion;
     export let disableLike = false;
@@ -35,7 +35,7 @@ import type PublicSuggestion from "./entities/PublicSuggestion";
             }
         }
     }
-    $: switch(suggestion.category.toLowerCase()){
+    $: if(disableLike != true) switch(suggestion.category.toLowerCase()){
         case "спорт": {
             color = "#26C4E7";
             break;

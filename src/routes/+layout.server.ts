@@ -1,5 +1,5 @@
 import type { LayoutServerLoad } from './$types';
-import { API_URL } from '$env/static/private';
+import { PUBLIC_API_URL } from '$env/static/public';
 
 export const load: LayoutServerLoad = async ({ cookies }) => {
 	const headers = new Headers();
@@ -8,7 +8,7 @@ export const load: LayoutServerLoad = async ({ cookies }) => {
     if (cookie) {
         headers.append('Cookie', cookie);
     }
-	const res = await fetch(API_URL+'/account', {
+	const res = await fetch(PUBLIC_API_URL+'/account', {
 		method: 'GET',
 		credentials: 'include',
 		headers

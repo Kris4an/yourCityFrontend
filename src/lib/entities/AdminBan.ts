@@ -1,9 +1,9 @@
 interface AdminBan {
-    startDate: String,
+    startDate: string,
     banLength: number,
-    reason: String,
-    adminName: String | null,
-    adminEmail: String | null
+    reason: string,
+    adminName: string | null,
+    adminEmail: string | null
 }
 
 export default AdminBan;

@@ -1,6 +1,6 @@
 interface School{
     id:number,
-    name: String
+    name: string
 }
 
 export default School;

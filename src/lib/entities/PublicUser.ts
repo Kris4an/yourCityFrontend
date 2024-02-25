@@ -1,7 +1,7 @@
 interface PublicUser{
-    name: String,
-    role: String,
-    school: String | null
+    name: string,
+    role: string,
+    school: string | null
 }
 
 export default PublicUser;

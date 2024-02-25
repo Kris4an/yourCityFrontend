@@ -1,7 +1,7 @@
 <script lang="ts">
 	import AdminSuggestionComponent from '$lib/AdminSuggestionComponent.svelte';
 	import type { PageData } from './$types';
-	//@ts-ignore
+	
 	import { PUBLIC_API_URL } from '$env/static/public';
 	import { goto } from '$app/navigation';
 	import type AdminBan from '$lib/entities/AdminBan';

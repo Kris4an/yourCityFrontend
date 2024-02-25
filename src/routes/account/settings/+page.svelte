@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	//@ts-ignore
+	
 	import { PUBLIC_API_URL } from '$env/static/public';
 	import { goto, invalidateAll } from '$app/navigation';
 	import Dropdown from '$lib/Dropdown.svelte';

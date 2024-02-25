@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import Checkbox from '$lib/Checkbox.svelte';
-	//@ts-ignore
+	
 	import { PUBLIC_API_URL } from '$env/static/public';
 
 	export let data: PageData;

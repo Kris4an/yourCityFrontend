@@ -3,7 +3,7 @@
 	import type PublicSuggestion from '$lib/entities/PublicSuggestion';
 	import { onMount } from 'svelte';
 	import type { PageData } from '../$types';
-	//@ts-ignore
+	
 	import { PUBLIC_API_URL } from '$env/static/public';
 	import Dropdown from '$lib/Dropdown.svelte';
 
@@ -16,7 +16,7 @@
 	let page: number = 1;
 	let order: string = 'По харесвания (намаляващо)';
 	onMount(async () => {
-		//@ts-ignore
+		
 		suggestions = data.suggestions;
 	});
 	$: order, refetch = true, loadSuggestions();
@@ -27,7 +27,7 @@
 			suggestions = [];
 			refetch = false;
 			if(order === 'По харесвания (намаляващо)'){
-				//@ts-ignore
+				
 				suggestions = data.suggestions
 				return;
 			}

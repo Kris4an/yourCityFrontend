@@ -2,12 +2,12 @@ import type AdminUser from "./AdminUser";
 
 interface AdminSuggestion {
     suggestionId: number,
-    title: String,
-    content: String,
-    postDate: String,
+    title: string,
+    content: string,
+    postDate: string,
     isAnon: boolean,
-    status: String,
-    category: String,
+    status: string,
+    category: string,
     user: AdminUser | null,
     likes: number
 }

@@ -4,7 +4,7 @@
 	import AdminSuggestionComponent from '$lib/AdminSuggestionComponent.svelte';
 	import type AdminSuggestion from '$lib/entities/AdminSuggestion';
 	import type { PageData } from './$types';
-	//@ts-ignore
+	
 	import { PUBLIC_API_URL } from '$env/static/public';
 
 	const sortOptionsBG = [

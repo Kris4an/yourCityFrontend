@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let isChecked = false;
-	export let text: String;
+	export let text: string;
     export let title = "";
 </script>
 

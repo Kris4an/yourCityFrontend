@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from '../other/$types';
-	//@ts-ignore
+	
 	import { PUBLIC_API_URL } from '$env/static/public';
 	import type Category from '$lib/entities/Category';
 	import type School from '$lib/entities/School';

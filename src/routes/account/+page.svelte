@@ -2,16 +2,12 @@
 	import { goto } from '$app/navigation';
 	import Suggestion from '$lib/Suggestion.svelte';
 	import type OwnSuggestion from '$lib/entities/OwnSuggestion';
-	import type { PageData } from '../$types';
 
-	export let data: PageData;
+	export let data: any;
 	let role = '';
 	let suggestions: OwnSuggestion[] = [];
-	const extensionObj = {
-		user: data.user,
-		isLikedByUser: false
-	}
-	//@ts-ignore
+
+	
 	$: suggestions = data.suggestions
 	$: switch (data.user.role) {
 		case 'student': {
@@ -57,8 +53,12 @@
 	<span id="suggestionTxt">Моите предложения</span>
 	<div id="sugestionsHolder">
 		{#each suggestions as suggestion}
-			<div>
+			<div class="suggestionWrapper">
 				<Suggestion suggestion={Object.assign(suggestion, {user: data.user}, {isLikedByUser: false})} disableLike={true}/>
+				<div>
+					<span>Статус: {suggestion.status}</span>
+					<button>Изтрий преложение</button>
+				</div>
 			</div>
 		{/each}
 	</div>
@@ -137,5 +137,33 @@
 		border: 2px solid var(--text);
 		border-radius: 10px;
 		padding: 5px;
+	}
+	.suggestionWrapper{
+		background-color: var(--transparentBackground);
+		display: flex;
+		flex-direction: column;
+		width: fit-content;
+		border-radius: 1rem;
+	}
+	.suggestionWrapper div{
+		padding: 5px 10px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.suggestionWrapper span{
+		font-size: 14pt;
+		font-family: 'Roboto';
+		color: var(--text);
+	}
+	.suggestionWrapper button{
+		font-size: 14pt;
+		font-family: 'Roboto';
+		color: var(--text);
+		background-color: var(--primary);
+		border-radius: 10px;
+		padding: 5px 10px;
+		border: 2px solid var(--secondary);
+		cursor: pointer;
 	}
 </style>

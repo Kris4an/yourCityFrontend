@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	export let options: String[];
-	export let value: String | null;
-	export let placeholder: String = '';
+	export let options: string[];
+	export let value: string | null;
+	export let placeholder: string = '';
 	export let isNullable = false;
 	export let nullableMessage = "Изчисти избор"
 

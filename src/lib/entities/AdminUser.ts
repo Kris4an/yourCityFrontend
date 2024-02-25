@@ -1,10 +1,10 @@
 interface AdminUser {
     userId: number,
-    userName: String,
-    role: String,
-    email: String,
-    school: String | null,
-    phone: String | null
+    userName: string,
+    role: string,
+    email: string,
+    school: string | null,
+    phone: string | null
 }
 
 export default AdminUser;

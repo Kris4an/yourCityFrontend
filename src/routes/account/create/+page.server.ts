@@ -1,8 +1,8 @@
 import type { PageServerLoad } from './$types';
-import { API_URL } from '$env/static/private';
+import { PUBLIC_API_URL } from '$env/static/public';
 
 export const load = (async () => {
-    const res = await fetch(API_URL+"/school/all",{
+    const res = await fetch(PUBLIC_API_URL+"/school/all",{
         method: 'GET'
     })
     if(res.status == 200){
