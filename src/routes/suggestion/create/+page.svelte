@@ -13,7 +13,7 @@
 	let content = '';
 	let correctInput = true;
 	let categoryName = null;
-	let categoryNames: String[] = [];
+	let categoryNames: string[] = [];
 	onMount(() => {
 		categoryNames = data.categories.map((e) => e.name);
 	});

@@ -1,7 +1,9 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 
 import { PUBLIC_API_URL } from '$env/static/public';
 import { error } from '@sveltejs/kit';
+
+export const ssr = false;
 
 export const load = (async ({ parent }) => {
     const data = await parent()
@@ -19,4 +21,4 @@ export const load = (async ({ parent }) => {
         }
     }
     return {};
-}) satisfies PageServerLoad;
+}) satisfies PageLoad;

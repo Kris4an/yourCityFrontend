@@ -1,13 +1,15 @@
-import type { LayoutServerLoad } from './$types';
+import type { LayoutLoad } from './$types';
 import { PUBLIC_API_URL } from '$env/static/public';
 
-export const load: LayoutServerLoad = async ({ cookies }) => {
+export const ssr = false;
+
+export const load: LayoutLoad = async () => {
 	const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    const cookie = "user_session="+cookies.get("user_session");
-    if (cookie) {
+    //const cookie = "user_session="+cookies.get("user_session");
+    /*if (cookie) {
         headers.append('Cookie', cookie);
-    }
+    }*/
 	const res = await fetch(PUBLIC_API_URL+'/account', {
 		method: 'GET',
 		credentials: 'include',
