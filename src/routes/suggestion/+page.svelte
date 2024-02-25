@@ -2,12 +2,11 @@
 	import Suggestion from '$lib/Suggestion.svelte';
 	import type PublicSuggestion from '$lib/entities/PublicSuggestion';
 	import { onMount } from 'svelte';
-	import type { PageData } from '../$types';
 	
 	import { PUBLIC_API_URL } from '$env/static/public';
 	import Dropdown from '$lib/Dropdown.svelte';
 
-	export let data: PageData;
+	export let data: any;
 
 	const orderOptionsBG = ['По дата (намаляващо)', 'По дата (увеличаващо)', 'По харесвания (намаляващо)', 'По харесвания (увеличаващо)']
 	const orderOptions = ['dateDesc', 'dateAsc', 'likesDesc', 'likesAsc']

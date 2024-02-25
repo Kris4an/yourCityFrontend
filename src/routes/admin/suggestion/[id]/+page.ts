@@ -1,9 +1,11 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 
 import { PUBLIC_API_URL } from '$env/static/public';
 import { error } from '@sveltejs/kit';
 
-export const load = (async ({params, cookies}) => {
+export const ssr = false;
+
+export const load = (async ({params}) => {
     if(params.id == null){
         throw error(404, {
             message: 'Not Found',
@@ -11,10 +13,6 @@ export const load = (async ({params, cookies}) => {
     }
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    const cookie = "user_session="+cookies.get("user_session");
-    if (cookie) {
-        headers.append('Cookie', cookie);
-    }
     const res = await fetch(PUBLIC_API_URL+"/admin/suggestion/"+params.id,{
         method: 'GET',
         credentials: 'include',
@@ -28,4 +26,4 @@ export const load = (async ({params, cookies}) => {
     else throw error(400, {
         message: 'Error',
     });
-}) satisfies PageServerLoad;
+}) satisfies PageLoad;

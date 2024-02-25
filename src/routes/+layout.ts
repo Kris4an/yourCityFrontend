@@ -6,10 +6,6 @@ export const ssr = false;
 export const load: LayoutLoad = async () => {
 	const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    //const cookie = "user_session="+cookies.get("user_session");
-    /*if (cookie) {
-        headers.append('Cookie', cookie);
-    }*/
 	const res = await fetch(PUBLIC_API_URL+'/account', {
 		method: 'GET',
 		credentials: 'include',

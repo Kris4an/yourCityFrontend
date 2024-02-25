@@ -1,5 +1,7 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 import { PUBLIC_API_URL } from '$env/static/public';
+
+export const ssr = false;
 
 export const load = (async () => {
     const res = await fetch(PUBLIC_API_URL+"/school/all",{
@@ -11,4 +13,4 @@ export const load = (async () => {
         }
     }
     return {};
-}) satisfies PageServerLoad;
+}) satisfies PageLoad;

@@ -1,14 +1,11 @@
-import type { PageServerLoad } from './$types';
-
+import type { PageLoad } from './$types';
 import { PUBLIC_API_URL } from '$env/static/public';
 
-export const load = (async ({ cookies }) => {
+export const ssr = false;
+
+export const load = (async () => {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    const cookie = "user_session="+cookies.get("user_session");
-    if (cookie) {
-        headers.append('Cookie', cookie);
-    }
     const res = await fetch(PUBLIC_API_URL+"/suggestion/my?page=1", {
         method: 'GET',
         credentials: 'include',
@@ -20,4 +17,4 @@ export const load = (async ({ cookies }) => {
         }
     }
     return {};
-}) satisfies PageServerLoad;
+}) satisfies PageLoad;
