@@ -6,10 +6,13 @@
 
 	export let data: PageData;
 	let role = '';
-	//let suggestions: OwnSuggestion[] = null;
-
+	let suggestions: OwnSuggestion[] = [];
+	const extensionObj = {
+		user: data.user,
+		isLikedByUser: false
+	}
 	//@ts-ignore
-	//$: suggestions = data.userSuggestions
+	$: suggestions = data.suggestions
 	$: switch (data.user.role) {
 		case 'student': {
 			role = 'Ученик';
@@ -51,12 +54,14 @@
 				>{data.user.school != null ? data.user.school : 'Неизвестно училище'}</span
 			>{/if}
 	</div>
-	<!-- <span id="suggestionTxt">Предложения</span>
+	<span id="suggestionTxt">Моите предложения</span>
 	<div id="sugestionsHolder">
 		{#each suggestions as suggestion}
-			<div>{suggestion.content}</div>
+			<div>
+				<Suggestion suggestion={Object.assign(suggestion, {user: data.user}, {isLikedByUser: false})} disableLike={true}/>
+			</div>
 		{/each}
-	</div> -->
+	</div>
 </div>
 
 <style>

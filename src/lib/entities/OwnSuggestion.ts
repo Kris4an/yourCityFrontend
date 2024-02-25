@@ -1,11 +1,11 @@
 interface OwnSuggestion {
     id: number,
-    title: String,
-    content: String,
-    category: String,
-    postDate: String,
-    isAnon: Boolean,
-    status: String,
+    title: string,
+    content: string,
+    category: string,
+    postDate: string,
+    isAnon: boolean,
+    status: string,
     likes: number
 }
 

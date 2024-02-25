@@ -1,22 +1,31 @@
 import type { PageServerLoad } from './$types';
 //@ts-ignore
 import { API_URL } from '$env/static/private';
+import { error } from '@sveltejs/kit';
 
-export const load = (async ({cookies}) => {
+export const load = (async ({params, cookies}) => {
+    if(params.id == null){
+        throw error(404, {
+            message: 'Not Found',
+        });
+    }
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     const cookie = "user_session="+cookies.get("user_session");
     if (cookie) {
         headers.append('Cookie', cookie);
     }
-    const res = await fetch(API_URL+"/suggestion/approved",{
+    const res = await fetch(API_URL+"/admin/suggestion/"+params.id,{
         method: 'GET',
+        credentials: 'include',
         headers
     })
     if(res.status == 200){
         return{
-            approvedSuggestions: await res.json()
+            suggestion: await res.json()
         }
     }
-    return {};
+    else throw error(400, {
+        message: 'Error',
+    });
 }) satisfies PageServerLoad;

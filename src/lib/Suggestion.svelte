@@ -3,9 +3,8 @@ import type PublicSuggestion from "./entities/PublicSuggestion";
 	import type PublicUser from "./entities/PublicUser";
     //@ts-ignore
 	import { PUBLIC_API_URL } from '$env/static/public';
-	import { goto } from "$app/navigation";
-
     export let suggestion: PublicSuggestion;
+    export let disableLike = false;
     let simpleUser: PublicUser = {
         name:'',
         role:'',
@@ -87,13 +86,13 @@ import type PublicSuggestion from "./entities/PublicSuggestion";
             <span style="color: {color}; font-size: 18pt">{new Date(suggestion.postDate).toLocaleDateString()}</span>
             <b title={simpleUser.school+""} style="color: {color}; font-size: 16pt">{simpleUser.name}</b>
         </div>
-        <button style="background-color: {color}" on:click={likeButtonPress}>{suggestion.likes}{suggestion.isLikedByUser? '💖':'🤍'}</button>
+        <button style="background-color: {color}" on:click={likeButtonPress} disabled={disableLike}>{suggestion.likes}{suggestion.isLikedByUser? '💖':'🤍'}</button>
     </div>
 </div>
 
 <style>
     #wrapper{
-        width: 80%;
+        width: 80vw;
         max-width: 55rem;
         min-height: 15rem;
         padding: 1rem;
@@ -132,7 +131,11 @@ import type PublicSuggestion from "./entities/PublicSuggestion";
         transition: all 300ms ease-in-out;
         cursor: pointer;
     }
-    button:hover{
+    button:disabled{
+        background-color: grey;
+        cursor: auto;
+    }
+    button:hover:not([disabled]){
         min-width: 7rem;
         font-size: 20pt;
     }

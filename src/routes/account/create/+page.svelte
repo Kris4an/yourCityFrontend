@@ -133,6 +133,7 @@
 				{/if}
 			</div>
 			<span>* - задължително поле</span>
+			<span style="font-size: 12pt;">Със създаването на профил се съгласявам се с <a href="/terms-of-service">Условията за ползване</a> и <a href="/privacy-policy">Политиката на поверителност</a></span>
 			{#if showErrorMessage}
 				<span class="error">Имаше грешка при въвежадане не данните<br/>
 				Уверете се, че имейла, който ползвате не зает</span>
@@ -262,5 +263,8 @@
 	#dropdownHolder :global(.dropdown) {
 		background-color: var(--transparentBackground);
 		max-width: 12rem;
+	}
+	a{
+		color: var(--text);
 	}
 </style>

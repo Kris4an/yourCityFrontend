@@ -5,14 +5,14 @@
         <a class="item" href="https://facebook.com">Facebook</a>
     </div>
     <div class="holder">
-        <span class='title'>Информация</span>
-        <a class="item" href="/">За сайта</a>
-        <a class="item" href="/">Политика за поверителност</a>
+        <span class='title'>Правна информация</span>
+        <a class="item" href="/terms-of-service">Условия за ползване</a>
+        <a class="item" href="/privacy-policy">Политика за поверителност</a>
     </div>
     <div class="holder">
         <span class='title'>Контакти</span>
-        <span class="item">kmetnamladazagora@gmail.com</span>
-        <span class="item"></span>
+        <a class="item" href="mailto:kmetnamladazagora@gmail.com">kmetnamladazagora@gmail.com</a>
+        <a class="item" href="mailto:contact@yourstz.com">contact@yourstz.com</a>
     </div>
 </footer>
 

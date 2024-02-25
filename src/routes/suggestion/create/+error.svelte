@@ -1,7 +1,11 @@
+<script lang="ts">
+    import { page } from '$app/stores';
+</script>
+
 <div>
-    <b>404</b>
-    <span>Накъде? Страницата не съществува.</span>
-    <a href='/'>Към заглавната страница</a>
+    <b>{$page.status}</b>
+    <span>{$page.error?.message}</span>
+    <a href='/account/login'>Влeз в профил</a>
 </div>
 
 <style>

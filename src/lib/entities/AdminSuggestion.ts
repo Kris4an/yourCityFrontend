@@ -5,7 +5,7 @@ interface AdminSuggestion {
     title: String,
     content: String,
     postDate: String,
-    isAnon: Boolean,
+    isAnon: boolean,
     status: String,
     category: String,
     user: AdminUser | null,
