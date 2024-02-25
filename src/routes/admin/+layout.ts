@@ -15,10 +15,10 @@ export const load = (async ({ }) => {
 	})
 	if(res.status == 200){
 		const data = await res.json()
-		if(data.user.role != 'admin'){
+		if(data.role != 'admin'){
 			error(403, {
 				message: 'Forbidden',
-			});
+			});``
 		}
 	}
 	if(res.status == 401){
