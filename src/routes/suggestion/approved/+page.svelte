@@ -33,7 +33,7 @@
         background-color: var(--transparentBackground);
         text-align: center;
         vertical-align: middle;
-        padding: 2rem;
+        padding: 2rem 0rem;
         color: var(--text);
         width: 100%;
     }
@@ -60,5 +60,13 @@
         font-size: 14pt;
         color: var(--text);
         margin: 5px 10px;
+    }
+    @media only screen and (max-width: 800px) {
+        #wrapper{
+            max-width: 100vw;
+        }
+        #title{
+            font-size: 30pt;
+        }
     }
 </style>

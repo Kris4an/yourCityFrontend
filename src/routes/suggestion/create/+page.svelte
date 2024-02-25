@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import Checkbox from '$lib/Checkbox.svelte';
-	
+
 	import { PUBLIC_API_URL } from '$env/static/public';
 
 	export let data: PageData;
@@ -29,7 +29,7 @@
 				categoryId = category.id;
 			}
 		});
-        if(categoryId == -1) return;
+		if (categoryId == -1) return;
 		const res = await fetch(PUBLIC_API_URL + '/suggestion/new', {
 			method: 'POST',
 			credentials: 'include',
@@ -37,22 +37,21 @@
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-                title,
-                content,
-                isAnon,
-                categoryId
+				title,
+				content,
+				isAnon,
+				categoryId
 			})
 		});
-        if(res.status == 201){
-            alert("Успешно предложено предложение!");
-            content = '';
-            title = '';
-            isAnon = false;
-            categoryName = null;
-        }
-        else{
-            correctInput = false;
-        }
+		if (res.status == 201) {
+			alert('Успешно предложено предложение!');
+			content = '';
+			title = '';
+			isAnon = false;
+			categoryName = null;
+		} else {
+			correctInput = false;
+		}
 	}
 </script>
 
@@ -195,5 +194,19 @@
 		color: red;
 		font-family: 'Roboto';
 		font-size: 16pt;
+	}
+	@media only screen and (max-width: 600px) {
+		p {
+			font-size: 30pt;
+		}
+		#inputHolder{
+			width: 95%;
+		}
+		#holder{
+			max-width: 100vw;
+		}
+		#descHolder span{
+			max-width: 95%;
+		}
 	}
 </style>

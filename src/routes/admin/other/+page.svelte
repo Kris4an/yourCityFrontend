@@ -5,10 +5,10 @@
 	import type Category from '$lib/entities/Category';
 	import type School from '$lib/entities/School';
 
-	let newCategoryName: String;
+	let newCategoryName: string;
 	let categories: Category[] = [];
 
-	let newSchoolName: String;
+	let newSchoolName: string;
 	let schools: School[] = [];
 
 	async function newCategory() {
@@ -55,7 +55,6 @@
 		}
 	}
 	async function newSchool() {
-		console.log(newSchoolName);
 		if (newSchoolName.length < 3) {
 			alert('Името на училището трябва да е поне 3 символа');
 			return;

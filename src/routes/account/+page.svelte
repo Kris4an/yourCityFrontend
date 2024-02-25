@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { PUBLIC_API_URL } from '$env/static/public';
 	import Suggestion from '$lib/Suggestion.svelte';
 	import type OwnSuggestion from '$lib/entities/OwnSuggestion';
 
@@ -24,6 +25,20 @@
 		}
 	}
 	
+	async function deleteSuggestion(suggestion: OwnSuggestion){
+		if(confirm("Сигурен ли си, че искаш да изтриеш предложение №"+suggestion.id)){
+			const res = await fetch(PUBLIC_API_URL+"/suggestion/"+suggestion.id, {
+				method: 'DELETE',
+				credentials: 'include'
+			})
+			if(res.status == 200){
+				location.reload();
+			}
+			if(res.status == 403){
+				alert("Не може да се изтрие предложението, защото то е одобрено")
+			}
+		}
+	}
 </script>
 
 <link
@@ -52,12 +67,12 @@
 	</div>
 	<span id="suggestionTxt">Моите предложения</span>
 	<div id="sugestionsHolder">
-		{#each suggestions as suggestion}
+		{#each suggestions as suggestion(suggestion.id)}
 			<div class="suggestionWrapper">
 				<Suggestion suggestion={Object.assign(suggestion, {user: data.user}, {isLikedByUser: false})} disableLike={true}/>
 				<div>
 					<span>Статус: {suggestion.status}</span>
-					<button>Изтрий преложение</button>
+					<!-- <button on:click={() => deleteSuggestion(suggestion)}>Изтрий преложение</button> -->
 				</div>
 			</div>
 		{/each}
@@ -75,7 +90,7 @@
 	#userHolder {
 		width: 100%;
 		border-left: 5px var(--text) solid;
-		height: 10rem;
+		min-height: 10rem;
         display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -83,7 +98,7 @@
 		align-items: flex-start;
 	}
 	#userHolder div {
-        height: 4rem;
+        min-height: 4rem;
 		display: flex;
 		flex-direction: row;
         align-items: center;
@@ -156,7 +171,7 @@
 		font-family: 'Roboto';
 		color: var(--text);
 	}
-	.suggestionWrapper button{
+	/* .suggestionWrapper button{
 		font-size: 14pt;
 		font-family: 'Roboto';
 		color: var(--text);
@@ -165,5 +180,19 @@
 		padding: 5px 10px;
 		border: 2px solid var(--secondary);
 		cursor: pointer;
+	} */
+	@media only screen and (max-width: 600px) {
+		#userHolder{
+			border: none;
+			padding: 0px;
+		}
+  		#userHolder div{
+    		flex-direction: column;
+			align-items: flex-start;
+  		}
+		#holder{
+			width: 100vw;
+			padding: 5px 0px;
+		}
 	}
 </style>

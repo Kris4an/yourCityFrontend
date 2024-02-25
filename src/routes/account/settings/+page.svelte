@@ -11,11 +11,10 @@
 	let name = data.user.name;
 	let phone = data.user.phone;
 	let role = '';
-	let schoolName: String | null = data.user.school;
+	let schoolName: string | null = data.user.school;
 
 	$: schoolNames = data.allSchools.map((s: School) => s.name);
 	onMount(() => {
-		console.log(data);
 		switch (data.user.role) {
 			case 'student': {
 				role = 'Ученик';
@@ -164,7 +163,6 @@
 											return;
 										}
 									});
-									console.log(schoolId)
 								const res = await fetch(PUBLIC_API_URL+"/account/settings/school",{
 									method: 'PUT',
 									credentials: 'include',

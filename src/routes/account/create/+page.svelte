@@ -17,20 +17,20 @@
 	let validPassword = true;
 	let showErrorMessage = false;
 
-	let role: String | null = null;
-	let school: String;
+	let role: string | null = null;
+	let school: string;
 	let password = '';
 	let repeatPassword = '';
-	let phone: String | null = null;
+	let phone: string | null = null;
 	let name = '';
 	let email = '';
-	let schoolNames: String[];
+	let schoolNames: string[];
 
 	$: schoolNames = data.allSchools.map((s: School) => s.name)
 	$: if (repeatPassword != password) passwordsMatch = false;
 	else passwordsMatch = true;
 
-	function validatePhone(phoneV: String | null): boolean {
+	function validatePhone(phoneV: string | null): boolean {
 		if(phoneV == null) return true;
 		if(phoneV == '') {
 			phone = null;
@@ -42,7 +42,7 @@
 		}
 		return true;
 	}
-	function validateName(name: String): boolean{
+	function validateName(name: string): boolean{
 		if(name.length < 3) return false;
 		const lowercaseName = name.toLowerCase();
 		for(let i = 0; i < name.length; i++){
@@ -50,7 +50,7 @@
 		}
 		return true;
 	}
-	function validatePassword(pass: String):boolean {
+	function validatePassword(pass: string):boolean {
 		if(pass.length < 8 || pass.length > 256) return false;
 		let hasUppercase = false, hasLowercase = false, hasNumber  = false;
 		for(let i = 0; i < pass.length; i++){
@@ -60,7 +60,7 @@
 		}
 		return hasLowercase
 	}
-    function validateEmail(email: String):boolean{
+    function validateEmail(email: string):boolean{
 		return email.includes('@') && email.length >= 3;
 	}
 </script>

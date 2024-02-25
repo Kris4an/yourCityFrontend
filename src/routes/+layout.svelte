@@ -12,7 +12,6 @@
 	/>
 </svelte:head>
 
-<div>
 	<nav>
 		<a href="/">Начало</a>
 		<a href="/suggestion">Предложения</a>
@@ -30,43 +29,51 @@
 			<a href="/login">Влез</a>
 		{/await}
 	</nav>
-</div>
 <slot />
 <Footer />
 
 <style>
-	div {
+	nav {
 		position: sticky;
 		top: 0;
 		width: 100%;
 		height: 4rem;
 		background-color: var(--primary);
 		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 2rem;
-		z-index: 5;
-		justify-self: end;
-	}
-	nav {
-		display: flex;
+		flex-direction: row;
 		align-items: center;
 		justify-content: space-around;
-		width: 100%;
+		z-index: 5;
+		justify-self: end;
 	}
 	a {
 		color: var(--text);
 		text-decoration: none;
 		font-family: 'Roboto';
 		font-weight: 500;
-		font-size: 20px;
+		font-size: 16pt;
 		transition: all ease-in-out 300ms;
 		user-select: none;
 		width: 100%;
 		text-align: center;
 	}
 	a:hover {
-		font-size: 24px;
+		font-size: 18pt;
 		font-weight: 700;
+	}
+	@media only screen and (max-width: 800px) {
+		a{
+			font-size: 14pt;
+		}
+		a:hover {
+			font-size: 14pt;
+		}
+		nav{
+			position: relative;
+			height: auto;
+			max-width: 100vw;
+			flex-direction: column;
+			align-items: flex-start;
+		}
 	}
 </style>

@@ -9,10 +9,10 @@
 
 	export let data: PageData;
 
-	let moreInfo: String;
+	let moreInfo: string;
 	let bans: AdminBan[] = [];
 	let banLength: number;
-	let reason: String;
+	let reason: string;
 	async function approve() {
 		if (moreInfo == undefined || moreInfo.length < 3) {
 			alert('Допулнителната информация трябва да е поне 3 символа!');
