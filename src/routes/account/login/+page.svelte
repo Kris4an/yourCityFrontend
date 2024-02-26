@@ -59,8 +59,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		max-width: 100vw;
 	}
 	#loginHolder {
+		max-width: 100%;
 		width: 60rem;
 		height: 40rem;
 		border: 0.5rem solid var(--primary);
@@ -148,5 +150,13 @@
 	h2{
 		font-size: 22pt;
 		margin: 1rem 0px 1rem 0px;
+	}
+	@media only screen and (max-width: 800px) {
+		#holder{
+			max-width: 100vw;
+		}
+		#content{
+			width: 100%;
+		}
 	}
 </style>

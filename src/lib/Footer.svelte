@@ -57,16 +57,17 @@
 	@media only screen and (max-width: 800px) {
 		.item{
             font-size: 8pt;
+            width: 100%;
         }
         .title{
             font-size: 10pt;
+            width: 100%
         }
         footer, .title {
             padding: 0px;
         }
         .holder{
             flex-direction: row;
-            justify-content: space-around;
             width: 100%;
         }
         footer{

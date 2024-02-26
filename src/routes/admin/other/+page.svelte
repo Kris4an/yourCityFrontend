@@ -270,4 +270,9 @@
 		font-size: 16pt;
 		padding: 5px;
 	}
+	@media only screen and (max-width: 800px){
+		.holder{
+			flex-direction: column;
+		}
+	}
 </style>

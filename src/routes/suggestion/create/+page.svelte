@@ -195,7 +195,7 @@
 		font-family: 'Roboto';
 		font-size: 16pt;
 	}
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 800px) {
 		p {
 			font-size: 30pt;
 		}

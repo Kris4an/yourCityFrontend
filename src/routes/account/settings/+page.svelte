@@ -200,7 +200,7 @@
 				}
 			}}>Излез от профила</button
 		>
-		<button class="criticalButton">Изтрий профил</button>
+		<!-- <button class="criticalButton">Изтрий профил</button> -->
 	</div>
 </div>
 
@@ -290,5 +290,27 @@
 	#roleHolder {
 		display: flex;
 		gap: 3rem;
+	}
+	@media only screen and (max-width: 800px) {
+		#firstHolder{
+			max-width: 100vw;
+		}
+		#holder{
+			width: 95%;
+			padding: 1rem 0px;
+		}
+		.settingHolder{
+			max-width: 100%;
+		}
+		.settingHolder div{
+			flex-direction: column;
+		}
+		.criticalButton{
+			max-width: 95%;
+		}
+		#roleHolder{
+			max-width: 100%;
+			flex-direction: column;
+		}
 	}
 </style>

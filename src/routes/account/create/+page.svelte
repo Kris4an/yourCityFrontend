@@ -267,4 +267,16 @@
 	a{
 		color: var(--text);
 	}
+	@media only screen and (max-width: 800px) {
+		#wrapper{
+			max-width: 100vw;
+		}
+		#holder{
+			max-width: 100%;
+			padding: 0px 0px 10px 0px;
+		}
+		#fieldHolder{
+			max-width: 95%;
+		}
+	}
 </style>

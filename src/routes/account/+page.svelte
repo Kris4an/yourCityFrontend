@@ -181,7 +181,7 @@
 		border: 2px solid var(--secondary);
 		cursor: pointer;
 	} */
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 800px) {
 		#userHolder{
 			border: none;
 			padding: 0px;
