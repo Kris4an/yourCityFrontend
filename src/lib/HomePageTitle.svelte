@@ -12,7 +12,7 @@
 	};
 	const revertText = () => {
 		hover = false;
-		title = 'ТВОИТЕ ИДЕИ ЗА ТВОЯТ';
+		title = 'ТВОИТЕ ИДЕИ ЗА ТВОЯ';
 		titleBold = 'ГРАД';
 	};
 </script>

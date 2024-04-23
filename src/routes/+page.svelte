@@ -38,7 +38,7 @@
 				<p in:slide={{ duration: 400 }}>Кои сме ние?</p>
 				<span in:fade={{ duration: 600 }}
 					>На снимката може да видите създателя на сайта - Кристиан Христакиев и човека отговорен за
-					реалзацията на предложенията - младия кмет на Стара Загора - Никола Кирилов. Разбира се
+					реализацията на предложенията - младия кмет на Стара Загора - Никола Кирилов. Разбира се
 					той не работи сам. Зад него стои Младежкия общински съвет и заместник младия кмет. Чрез
 					гласуването и даването на идеи, всеки потребител на сайта помага за това Стара Загора да
 					стане един по-добър град!</span
@@ -71,11 +71,14 @@
 		background-color: var(--transparentBackground);
 	}
 	.halfSection {
-		width: 100%;
+		padding: 5rem;
+		max-width: 100vw;
 		display: flex;
 		justify-content: space-around;
 		flex-grow: 1;
+		gap: 1rem;
 	}
+
 	img {
 		width: 40rem;
 		height: 22rem;
@@ -102,6 +105,7 @@
 	}
 	@media only screen and (max-width: 800px) {
 		.halfSection{
+			padding: 0px;
 			flex-direction: column;
 		}
 		span{

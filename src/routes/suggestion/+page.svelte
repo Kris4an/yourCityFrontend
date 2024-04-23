@@ -50,7 +50,6 @@
 	}
 </script>
 
-<!-- <svelte:window bind:scrollY={scrollY} bind:innerHeight/> -->
 <div id="wrapper">
 	<div id="title">
 		ГЛАСУВАЙ ЗА<br />

@@ -10,6 +10,10 @@
 		href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
 		rel="stylesheet"
 	/>
+	<title>Твоята Стара Загора</title>
+	<meta name="robots" content="index, follow" />
+	<meta name="description" content="Направи предложение как да се подбри твоята Стара Загора, гласувай за предложенията на други потребители." />
+	<html lang="bg" />
 </svelte:head>
 
 	<nav>

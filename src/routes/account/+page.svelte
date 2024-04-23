@@ -3,6 +3,7 @@
 	import { PUBLIC_API_URL } from '$env/static/public';
 	import Suggestion from '$lib/Suggestion.svelte';
 	import type OwnSuggestion from '$lib/entities/OwnSuggestion';
+	import statusMap  from '$lib/nameMap';
 
 	export let data: any;
 	let role = '';
