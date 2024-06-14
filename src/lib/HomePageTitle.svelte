@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade, fly, slide } from 'svelte/transition';
 
-	let title: string = 'ТВОИТЕ ИДЕИ ЗА ТВОЯТ';
+	let title: string = 'ТВОИТЕ ИДЕИ ЗА ТВОЯ';
 	let titleBold: string = 'ГРАД';
 	let hover: boolean = false;
 
