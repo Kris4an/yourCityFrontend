@@ -1,38 +1,17 @@
-# create-svelte
+# Your City - Frontend
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+**Your City** is a web platform where users can submit suggestions on how to make their city better. 
 
-## Creating a project
+This repository contains the **frontend** part of the project, built using the [Svelte](https://svelte.dev/) framework and [TypeScript](https://www.typescriptlang.org/).
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 🚀 Features
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+* **Submit Suggestions:** Users can easily submit ideas and suggestions on how to improve their city.
+* **Categorization:** Suggestions are organized into multiple categories for easier navigation and filtering.
+* **Voting System:** Users can upvote and interact with suggestions made by other community members.
+* **Moderation:** Special moderation roles allow designated users to control, review, and moderate content to keep the platform safe and constructive.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## 🛠️ Tech Stack
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+* **Framework:** [SvelteKit](https://kit.svelte.dev/)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
